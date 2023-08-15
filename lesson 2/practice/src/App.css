@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap');
 body{
     background: #834BF6FF;
     display: flex;
@@ -6,7 +7,58 @@ body{
 }
 .App{
     width: 550px; 
-    height: 422px; 
+    min-height: 422px; 
     background: #1C173FFF; 
     box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f; 
+    display:  flex;
+     flex-direction: column;
+     align-items: center;
+}
+.App h1{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 35px; 
+    line-height: 50px; 
+    color: #FFFFFFFF; 
+}
+.head {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 477px; 
+}
+.taskCard {
+    width: 435px; 
+    height: 27px; 
+    background: #834BF6FF; 
+    border-radius: 3px; 
+    color: white;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 20px;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+.taskInput {
+    width: 360px; 
+    height: 50px; 
+    background: #1C173FFF; 
+    border-radius: 2px; 
+    border-width: 1px; 
+    border-color: #9095A0FF; 
+    border-style: solid; 
+    color: white;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 20px;
+}
+.taskButton {
+    width: 105px; 
+    height: 57px; 
+    background: #834BF6FF; 
+    color: white;
+    font-family: 'Epilogue',  sans-serif;
+    border-radius: 4px; 
+    font-size: 20px;
 }
