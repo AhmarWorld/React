@@ -1,0 +1,12 @@
+body{
+    background: #834BF6FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.App{
+    width: 550px; 
+    height: 422px; 
+    background: #1C173FFF; 
+    box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f; 
+}
