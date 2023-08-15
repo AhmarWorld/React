@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputs{
+    width: 538px;
+    height: 16px;
+    padding: 16px 20px;
+    border: 1 solid #2f3747;
+    border-radius: 15px;
+}
+#yellow{
+    background-color: rgb(224, 224, 111);
+}
+.buttons{
+    width: 118px;
+    height: 56px;
+    background-color: #B0BDD633;
+    padding: 13px 20px;
+    border-radius: 15px;
+    border: none;
+}
+.string{
+    display: flex;
+    width: 700px;
+    justify-content: space-around;
+    align-items: center;
+}
+#show{
+    display: block;
+}
+.copyCut{
+    display: none;
+    width: 644px;
+    height: 146px;
+    padding: 5px 28px;
+    margin: 16px 0px 0px;
+    border: 1 solid #2f3747;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+.copyCut svg{
+    height: 40px;
+    width: 40px;
+}
+.copyCut button{
+    color: white;
+    margin-top: -5px;
+    cursor: pointer;
+}
+.copyCut p:hover{
+    color: red;
+    cursor: pointer;
+}
