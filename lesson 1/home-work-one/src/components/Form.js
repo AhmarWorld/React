@@ -6,15 +6,17 @@ export default function Form({ setLink, setShow }) {
     const [inputValue, setInputValue] = useState('')
     const [isEmpty, setColor] = useState(false)
 
-    async function cutLink(link) {
-        const response = await fetch(`https://clck.ru/?url=${link}`)
-        const data = await response.json()
-        return data
+    const fetchShortUrl = (url) => {
+        fetch(`https://clck.ru==?url=${url}`)
+        .then(res=> res.text())
+        .then((url)=>{
+            setLink(url)
+            console.log(url);
+        } )
     }
 
     const changeLink = () => {
-        cutLink(inputValue).then((data)=>setLink(data)).then(setShow(true))
-        
+        fetchShortUrl(inputValue).then(setShow(true))
     }
 
     return (

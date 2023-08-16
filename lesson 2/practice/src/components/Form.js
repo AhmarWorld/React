@@ -6,10 +6,10 @@ export default function From({setTask}){
     const [inputValue, setInputValue] = useState('')
 
     const addNewTask = () =>{
-        setTask(prev=>[...prev,{id:new Date(), value:inputValue}])
+        setTask(prev=>[...prev,{id:new Date().getTime(), value:inputValue}])
     }
     return(
-        <div>
+        <div className='addForm'>
             <TaskInput inputValue={inputValue} setInputValue={setInputValue} />
             <TaskButton value='AddTask' func={addNewTask}/>
         </div>

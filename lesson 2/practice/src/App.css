@@ -39,7 +39,7 @@ body{
     padding: 20px;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-bottom: 15px;
   }
 .taskInput {
     width: 360px; 
@@ -61,4 +61,10 @@ body{
     font-family: 'Epilogue',  sans-serif;
     border-radius: 4px; 
     font-size: 20px;
+}
+span{
+    cursor: pointer;
+}
+.addForm{
+    margin-bottom: 20px;
 }
