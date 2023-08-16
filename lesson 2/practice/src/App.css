@@ -68,3 +68,9 @@ span{
 .addForm{
     margin-bottom: 20px;
 }
+.editTask{
+    margin-bottom: 10px;
+}
+#show{
+    display: none;
+}
