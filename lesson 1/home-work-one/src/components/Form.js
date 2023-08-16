@@ -7,16 +7,18 @@ export default function Form({ setLink, setShow }) {
     const [isEmpty, setColor] = useState(false)
 
     const fetchShortUrl = (url) => {
-        fetch(`https://clck.ru==?url=${url}`)
+        
+        fetch(`https://clck.ru/--?url=${url}`)
         .then(res=> res.text())
-        .then((url)=>{
-            setLink(url)
-            console.log(url);
+        .then((res)=>{
+            setLink(res)
+            setShow(true)
+            console.log(res);
         } )
     }
 
     const changeLink = () => {
-        fetchShortUrl(inputValue).then(setShow(true))
+        fetchShortUrl(inputValue)
     }
 
     return (

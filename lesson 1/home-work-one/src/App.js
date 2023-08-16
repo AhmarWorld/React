@@ -18,8 +18,8 @@ function App() {
       <main>
         <Form setLink={setLink} setShow={setShow} />
         <div className='copyCut' id={`${isShow && 'show'}`}>
-          <p onClick={addClipboard(`${link}`)} style={{ height: '32px', fontSize: '32px', display: "flex", alignItems: 'center' }}><BsLink45Deg />{link}</p>
-          <Button value={'Копировать ctrl+c'} func={addClipboard(`${link}`)} />
+          <p onClick={()=>{addClipboard(`${link}`)}} style={{ height: '32px', fontSize: '32px', display: "flex", alignItems: 'center' }}><BsLink45Deg />{link}</p>
+          <Button value={'Копировать ctrl+c'} func={()=>{addClipboard(`${link}`)}} />
         </div>
       </main>
     </div>
