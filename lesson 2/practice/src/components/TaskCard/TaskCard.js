@@ -27,31 +27,33 @@ export default function TaskCard({ title, id, setTask, tasks }) {
 
   return (
     <div>
-      <div className="taskCard" id={isEdit && "show"}>
-        <p>{title}</p>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "60px",
-          }}
-        >
-          <span
-            onClick={() => {
-              setIsEdit(true);
+      {!isEdit && (
+        <div className="taskCard">
+          <p>{title}</p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "60px",
             }}
           >
-            <BiEdit />
-          </span>
-          <span
-            onClick={() => {
-              deleteTask(id);
-            }}
-          >
-            <FaTrash />
-          </span>
+            <span
+              onClick={() => {
+                setIsEdit(true);
+              }}
+            >
+              <BiEdit />
+            </span>
+            <span
+              onClick={() => {
+                deleteTask(id);
+              }}
+            >
+              <FaTrash />
+            </span>
+          </div>
         </div>
-      </div>
+      )}
       {isEdit && (
         <div className="editTask">
           <TaskInput inputValue={inputValue} setInputValue={setInputValue} />

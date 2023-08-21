@@ -11,6 +11,6 @@ export default function TaskInput({ inputValue, setInputValue }) {
       placeholder="Введите новое задание"
       value={inputValue}
       onChange={onChange}
-    ></input>
+    />
   );
 }
