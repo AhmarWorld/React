@@ -56,7 +56,7 @@ export default function TaskCard({ title, id, setTask, tasks }) {
         <div className="editTask">
           <TaskInput inputValue={inputValue} setInputValue={setInputValue} />
           <TaskButton
-            buttonState={inputValue ? false : true}
+            isDisabled={inputValue ? false : true}
             onClick={() => {
               setIsEdit(false);
               editTask(id, inputValue);

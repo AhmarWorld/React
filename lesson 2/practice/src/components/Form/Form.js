@@ -16,7 +16,7 @@ export default function From({ setTask }) {
     <div className="addForm">
       <TaskInput inputValue={inputValue} setInputValue={setInputValue} />
       <TaskButton
-        buttonState={inputValue ? false : true}
+        isDisabled={inputValue ? false : true}
         value="AddTask"
         onClick={() => {
           addNewTask();
