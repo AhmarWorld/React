@@ -1,6 +1,7 @@
 import { useState } from "react";
-import TaskInput from "./Input/TaskInput";
-import TaskButton from "./Button/TaskButton";
+import TaskInput from "../TaskInput/TaskInput";
+import TaskButton from "../TaskButton/TaskButton";
+import "./Form.css";
 
 export default function From({ setTask }) {
   const [inputValue, setInputValue] = useState("");

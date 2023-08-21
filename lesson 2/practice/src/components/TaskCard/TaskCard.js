@@ -1,13 +1,29 @@
-import "../App.css";
+import "./TaskCard.css";
 import { BiEdit } from "react-icons/bi";
 import { FaTrash } from "react-icons/fa";
-import TaskInput from "./Input/TaskInput";
-import TaskButton from "./Button/TaskButton";
+import TaskInput from "../TaskInput/TaskInput";
+import TaskButton from "../TaskButton/TaskButton";
 import { useState } from "react";
 
-export default function TaskCard({ title, id, deleteFunc, editFunc }) {
+export default function TaskCard({ title, id, setTask, tasks }) {
   const [isEdit, setEdit] = useState(false);
   const [inputValue, setInputValue] = useState(title);
+
+  const deleteTodo = (id) => {
+    const data = [...tasks];
+    const result = data.filter((el) => el.id !== id);
+    setTask(result);
+  };
+
+  const editTodo = (id, newText) => {
+    const data = [...tasks];
+    data.forEach((el) => {
+      if (el.id === id) {
+        el.value = newText;
+      }
+    });
+    setTask(data);
+  };
 
   return (
     <div>
@@ -29,7 +45,7 @@ export default function TaskCard({ title, id, deleteFunc, editFunc }) {
           </span>
           <span
             onClick={() => {
-              deleteFunc(id);
+              deleteTodo(id);
             }}
           >
             <FaTrash />
@@ -43,7 +59,7 @@ export default function TaskCard({ title, id, deleteFunc, editFunc }) {
             buttonState={inputValue ? false : true}
             func={() => {
               setEdit(false);
-              editFunc(id, inputValue);
+              editTodo(id, inputValue);
             }}
             value={"Edit"}
           />

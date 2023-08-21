@@ -1,0 +1,9 @@
+.taskButton {
+  width: 105px;
+  height: 57px;
+  background: #834bf6ff;
+  color: white;
+  font-family: "Epilogue", sans-serif;
+  border-radius: 4px;
+  font-size: 20px;
+}

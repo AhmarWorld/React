@@ -1,4 +1,4 @@
-import "../../App.css";
+import "./TaskButton.css";
 
 export default function TaskButton({ value, func, buttonState }) {
   return (
