@@ -6,16 +6,16 @@ import TaskButton from "../TaskButton/TaskButton";
 import { useState } from "react";
 
 export default function TaskCard({ title, id, setTask, tasks }) {
-  const [isEdit, setEdit] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
   const [inputValue, setInputValue] = useState(title);
 
-  const deleteTodo = (id) => {
+  const deleteTask = (id) => {
     const data = [...tasks];
     const result = data.filter((el) => el.id !== id);
     setTask(result);
   };
 
-  const editTodo = (id, newText) => {
+  const editTask = (id, newText) => {
     const data = [...tasks];
     data.forEach((el) => {
       if (el.id === id) {
@@ -38,14 +38,14 @@ export default function TaskCard({ title, id, setTask, tasks }) {
         >
           <span
             onClick={() => {
-              setEdit(true);
+              setIsEdit(true);
             }}
           >
             <BiEdit />
           </span>
           <span
             onClick={() => {
-              deleteTodo(id);
+              deleteTask(id);
             }}
           >
             <FaTrash />
@@ -57,9 +57,9 @@ export default function TaskCard({ title, id, setTask, tasks }) {
           <TaskInput inputValue={inputValue} setInputValue={setInputValue} />
           <TaskButton
             buttonState={inputValue ? false : true}
-            func={() => {
-              setEdit(false);
-              editTodo(id, inputValue);
+            onClick={() => {
+              setIsEdit(false);
+              editTask(id, inputValue);
             }}
             value={"Edit"}
           />

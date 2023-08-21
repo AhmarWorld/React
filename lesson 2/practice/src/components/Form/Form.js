@@ -18,7 +18,7 @@ export default function From({ setTask }) {
       <TaskButton
         buttonState={inputValue ? false : true}
         value="AddTask"
-        func={() => {
+        onClick={() => {
           addNewTask();
           setInputValue("");
         }}

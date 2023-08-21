@@ -1,8 +1,8 @@
 import "./TaskButton.css";
 
-export default function TaskButton({ value, func, buttonState }) {
+export default function TaskButton({ value, onClick, isDisables }) {
   return (
-    <button disabled={buttonState} className="taskButton" onClick={func}>
+    <button disabled={isDisables} className="taskButton" onClick={onClick}>
       {value}
     </button>
   );
