@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import TaskCard from "./components/TaskCard/TaskCard";
+import TaskList from "./components/TaskList/TaskList";
 import Form from "./components/Form/Form";
 
 function App() {
@@ -14,17 +14,7 @@ function App() {
       <div className="head">
         <h1>Get Things Done</h1>
         <Form setTask={setTask} />
-        {tasks.map((el) => {
-          return (
-            <TaskCard
-              key={el.id}
-              title={el.value}
-              id={el.id}
-              setTask={setTask}
-              tasks={tasks}
-            />
-          );
-        })}
+        <TaskList tasks={tasks} setTask={setTask} />
       </div>
     </div>
   );
