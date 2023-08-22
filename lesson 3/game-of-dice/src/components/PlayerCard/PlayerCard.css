@@ -1,0 +1,58 @@
+.player-card {
+    width: 374px; 
+    height: 442px;
+    background: rgba(205, 112, 255, 0.527);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: -1;
+}
+
+.player-card_head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 111px;
+    height: 96px;
+}
+
+.player-card_head h1 {
+    font-size: 25px;
+    line-height: 38px;
+    color: #171A1FFF;
+}
+
+.player-card_head p {
+    font-size: 32px;
+    color: #EE7D05FF;
+}
+
+.palyer-card_foot {
+    width: 155px;
+    height: 84px;
+    background: rgb(64, 0, 98);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#current-player{
+    animation: currentUser;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes currentUser {
+    0%{
+        background: rgba(205, 112, 255, 0.527);
+    }
+    100%{
+        background-color: rgb(204, 110, 255);
+    }
+}
+#current-player  h1{
+    font-weight: 700;
+}

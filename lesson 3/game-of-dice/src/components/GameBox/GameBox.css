@@ -1,0 +1,25 @@
+.main-game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 740px;
+    height: 445px;
+    z-index: -0;
+}
+.buttons-div{
+    position: absolute;
+    z-index: 4;
+    top: 28%;
+    display: flex;
+    flex-direction: column;
+    height: 367px;
+    align-items: center;
+    justify-content: space-between;
+}
+.buttons_down{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 86px;
+}
