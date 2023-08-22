@@ -12,10 +12,10 @@ import {
 } from "react-icons/bs";
 
 export default function GameBox({ nameOne, nameTwo, setWinner }) {
-  const [scoreOne, setScoreOne] = useState("0");
-  const [scoreTwo, setScoreTwo] = useState("0");
-  const [currentPointsOne, setCurrentPointsOne] = useState("0");
-  const [currentPointsTwo, setCurrentPointsTwo] = useState("0");
+  const [scoreOne, setScoreOne] = useState(0);
+  const [scoreTwo, setScoreTwo] = useState(0);
+  const [currentPointsOne, setCurrentPointsOne] = useState(0);
+  const [currentPointsTwo, setCurrentPointsTwo] = useState(0);
   const [currentPlayer, setCurrentPlayer] = useState(true);
   const [randomDice, setRandomDice] = useState(null);
   const diceIcons = [
@@ -39,10 +39,10 @@ export default function GameBox({ nameOne, nameTwo, setWinner }) {
         <Button
           value={"🐷 NEW GAME"}
           onClick={() => {
-            setScoreOne("0");
-            setScoreTwo("0");
-            setCurrentPointsOne("0");
-            setCurrentPointsTwo("0");
+            setScoreOne(0);
+            setScoreTwo(0);
+            setCurrentPointsOne(0);
+            setCurrentPointsTwo(0);
             setCurrentPlayer(true);
             setRandomDice(null);
             setWinner({ win: false, name: "" });
@@ -57,12 +57,12 @@ export default function GameBox({ nameOne, nameTwo, setWinner }) {
               setRandomDice(random);
               if (random === 1) {
                 setCurrentPlayer(!currentPlayer);
-                setCurrentPointsOne("0");
-                setCurrentPointsTwo("0");
+                setCurrentPointsOne(0);
+                setCurrentPointsTwo(0);
               } else if (currentPlayer) {
-                setCurrentPointsOne(`${+currentPointsOne + random}`);
+                setCurrentPointsOne(currentPointsOne + random);
               } else {
-                setCurrentPointsTwo(`${+currentPointsTwo + random}`);
+                setCurrentPointsTwo(currentPointsTwo + random);
               }
             }}
           />
@@ -70,18 +70,18 @@ export default function GameBox({ nameOne, nameTwo, setWinner }) {
             value={"👌 LEAVE"}
             onClick={() => {
               if (currentPlayer) {
-                setScoreOne(`${+currentPointsOne + +scoreOne}`);
-                if (+currentPointsOne + +scoreOne >= 100) {
+                setScoreOne(currentPointsOne + scoreOne);
+                if (currentPointsOne + scoreOne >= 100) {
                   setWinner({ win: true, name: nameOne });
                 }
-                setCurrentPointsOne(`0`);
+                setCurrentPointsOne(0);
                 setCurrentPlayer(false);
               } else {
-                setScoreTwo(`${+currentPointsTwo + +scoreTwo}`);
-                if (+currentPointsTwo + +scoreTwo >= 100) {
+                setScoreTwo(currentPointsTwo + scoreTwo);
+                if (currentPointsTwo + scoreTwo >= 100) {
                   setWinner({ win: true, name: nameTwo });
                 }
-                setCurrentPointsTwo(`0`);
+                setCurrentPointsTwo(0);
                 setCurrentPlayer(true);
               }
             }}

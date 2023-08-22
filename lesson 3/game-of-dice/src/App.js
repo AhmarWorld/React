@@ -8,7 +8,11 @@ function App() {
 
   return (
     <div className={`${winner && "win"} App`}>
-      <GameBox nameOne={"Ahmar"} nameTwo={"Nurs"} setWinner={setWinner} />
+      <GameBox
+        nameOne={"PLAYER 1"}
+        nameTwo={"PLAYER 2"}
+        setWinner={setWinner}
+      />
       {winner.win && <WinnerBox winner={winner.name} />}
     </div>
   );

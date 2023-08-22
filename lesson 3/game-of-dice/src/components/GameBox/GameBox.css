@@ -9,10 +9,10 @@
 .buttons-div {
   position: absolute;
   z-index: 4;
-  top: 28%;
+  top: 31%;
   display: flex;
   flex-direction: column;
-  height: 367px;
+  height: 338px;
   align-items: center;
   justify-content: space-between;
 }
