@@ -1,2 +1,14 @@
 .curency-button {
+  width: 73px;
+  height: 39px;
+  background: rgb(255, 255, 255);
+  border-radius: 3px;
+  line-height: 26px;
+  color: #171a1fff;
+  font-size: 16px;
+  border: none;
+}
+.activ-button {
+  color: #a2f9d4ff;
+  background: #25c981ff;
 }

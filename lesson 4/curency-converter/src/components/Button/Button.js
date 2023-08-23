@@ -1,6 +1,6 @@
 import "./Button.css";
 
-export default function Button({ value, onClick }) {
+export default function Button({ value, onClick, isActiv }) {
   return (
     <button
       className={`curency-button ${isActiv && "activ-button"}`}
