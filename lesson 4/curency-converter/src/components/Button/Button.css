@@ -1,5 +1,5 @@
 .curency-button {
-  width: 73px;
+  width: 62px;
   height: 39px;
   background: rgb(255, 255, 255);
   border-radius: 3px;
@@ -7,6 +7,7 @@
   color: #171a1fff;
   font-size: 16px;
   border: none;
+  cursor: pointer;
 }
 .activ-button {
   color: #a2f9d4ff;
