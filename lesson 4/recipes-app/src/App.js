@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Recipe from './components/Recipe/Recipe';
+import RecipeMain from './components/RecipeMain/RecipeMain';
 
 function App() {
 
@@ -8,11 +8,11 @@ function App() {
   const APP_KEY = '3ae6f619d6a871bfaeeef0a12b982b5c'
 
   const [recipes, setResipes] = useState([])
-  const [search, setSearch] = useState('')
-  const [query, setQuery] = useState('chicken')
+  const [query, setQuery] = useState('')
 
   useEffect(() => {
     getRecipes()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query])
 
   const getRecipes = async () => {
@@ -21,29 +21,9 @@ function App() {
     setResipes(data.hits)
   }
 
-  const getSearch = (e) => {
-    e.preventDefault()
-    setQuery(search)
-    setSearch('')
-  }
-
   return (
     <div className="App">
-      <form onSubmit={getSearch} className="search-form">
-        <input type="text" className="search-bar" value={search} onChange={(e) => {setSearch(e.target.value)}} />
-        <button className="search-button">Seatch</button>
-      </form>
-      <div className="recipes">
-        {recipes.map(recipe => (
-          <Recipe 
-          key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients}
-          />
-        ))}
-      </div>
+      <RecipeMain setQuery={setQuery} recipes={recipes} />
     </div>
   );
 }

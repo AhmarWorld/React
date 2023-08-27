@@ -1,4 +1,4 @@
-import './Recipe.css';
+import './RecipeCard.css';
 
 export default function Recipe({title,calories,image,ingredients}){
     return(
