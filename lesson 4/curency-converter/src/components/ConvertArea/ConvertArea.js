@@ -5,7 +5,7 @@ import ButtonSwitcher from "../ButtonSwitcher/ButtonSwitcher";
 export default function ConvertArea({
   curencyArray,
   inputValue,
-  setInputValue,
+  onChange,
   setActiveButton,
   activeButton,
 }) {
@@ -16,7 +16,7 @@ export default function ConvertArea({
         buttonValues={curencyArray}
         activeButton={activeButton}
       />
-      <Input inputValue={inputValue} setInputValue={setInputValue} />
+      <Input inputValue={inputValue} onChange={onChange} />
     </div>
   );
 }

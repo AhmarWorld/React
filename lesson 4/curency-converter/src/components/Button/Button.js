@@ -4,7 +4,7 @@ export default function Button({ value, onClick, activeButton }) {
   return (
     <button
       className={`curency-button ${
-        activeButton === value ? "activ-button" : "non-active-button"
+        activeButton === value ? "activ-button" : ""
       }`}
       onClick={onClick}
     >
