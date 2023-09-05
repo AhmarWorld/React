@@ -45,14 +45,9 @@ function App() {
             w={538}
             h={212}
           >
-            <Box height="110px">
+            <Box width="100%" height="60%">
               {isLoaded ? (
-                <Skeleton
-                  startColor="#FF9B50"
-                  endColor="#E25E3E"
-                  width={500}
-                  height="60px"
-                >
+                <Skeleton startColor="#FF9B50" endColor="#E25E3E" height="100%">
                   {text}
                 </Skeleton>
               ) : (
