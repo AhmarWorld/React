@@ -1,0 +1,44 @@
+.text-card {
+  width: 545px;
+  height: 396px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+
+  text-align: start;
+}
+
+.text-card p {
+  color: #4a556c;
+  font-family: Kumbh Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.text-card__title {
+  max-width: 560px;
+}
+
+.text-card__title h5 {
+  color: var(--gray-800, #4a556c);
+  font-family: Kumbh Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.32px;
+}
+
+.text-card__title h1 {
+  color: #333461;
+  font-family: Kumbh Sans;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  letter-spacing: -0.72px;
+}

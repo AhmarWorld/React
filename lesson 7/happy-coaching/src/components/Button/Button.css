@@ -1,0 +1,18 @@
+.button {
+  border-radius: 4px;
+  background: #20ad96;
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  font-family: Kumbh Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+
+  cursor: pointer;
+}
