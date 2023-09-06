@@ -1,0 +1,32 @@
+.couching {
+  display: inline-flex;
+  padding: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+
+  background: var(--White, #fff);
+}
+
+.couching h1 {
+  width: 300px;
+
+  color: var(--gray-900, #041434);
+  font-family: Kumbh Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: -0.72px;
+}
+.couching p {
+  width: 300px;
+
+  color: var(--gray-800, #4a556c);
+  font-family: Kumbh Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+}

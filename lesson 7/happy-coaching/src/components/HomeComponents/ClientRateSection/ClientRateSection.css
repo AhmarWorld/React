@@ -1,0 +1,38 @@
+.clients {
+  width: 1440px;
+  height: 879px;
+  flex-shrink: 0;
+
+  background: #faf8f6;
+
+  padding: 120px 14px 146px 150px;
+}
+
+.clients h1 {
+  width: 530px;
+
+  color: #333461;
+  font-family: Kumbh Sans;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -0.48px;
+}
+
+.clients .clients-feedback {
+  width: 1274px;
+  height: 391px;
+
+  margin-top: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clients svg {
+  position: relative;
+  left: 228px;
+  top: -25px;
+}

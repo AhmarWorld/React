@@ -1,0 +1,59 @@
+.home_one {
+  width: 1440px;
+  height: 677px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 85px;
+  padding-right: 166px;
+}
+
+.home_one .one_curly {
+  position: relative;
+  left: -51px;
+  top: -68px;
+}
+.home_one .success-rate {
+  display: inline-flex;
+  padding: 24px;
+  align-items: flex-start;
+  gap: 10px;
+
+  background: #fff;
+  box-shadow: 0px 16px 96px 0px rgba(111, 124, 144, 0.16);
+
+  position: relative;
+  top: 55px;
+  left: -118px;
+}
+
+.home_one .success-rate h4 {
+  color: #333461;
+  text-align: center;
+  font-family: AvertaStd-Black;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.72px;
+}
+.home_one .success-rate p {
+  color: #4a556c;
+  text-align: center;
+  font-family: AvertaStd-Regular;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 200% */
+  letter-spacing: -0.12px;
+}
+
+.home_one .title_person-img {
+  width: 462px;
+  height: 603px;
+  flex-shrink: 0;
+
+  background: url(../../../../public/assets/pexels-andrea-piacquadio.svg),
+    lightgray -196.911px -15.836px / 200.966% 102.626% no-repeat;
+}

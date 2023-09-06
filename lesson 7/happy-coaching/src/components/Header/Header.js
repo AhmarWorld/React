@@ -1,6 +1,7 @@
 import "./Header.css";
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -21,7 +22,13 @@ export default function Header() {
             <Link to="/sales">Extra Salespage</Link>
           </li>
         </ul>
-        <Button value={"Get your free guide now"} width="193px" height="40px" />
+        <Link to="/guide">
+          <Button
+            value={"Get your free guide now"}
+            width="193px"
+            height="40px"
+          />
+        </Link>
       </nav>
     </header>
   );
