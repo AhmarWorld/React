@@ -1,0 +1,31 @@
+.blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 97px 134px 97px 152px;
+}
+
+.blog h1 {
+    width: 680px;
+
+    color: #333461;
+    text-align: center;
+    font-family: Kumbh Sans;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 56px;
+    /* 116.667% */
+    letter-spacing: -0.48px;
+}
+
+.blog .blogs-card {
+    width: 1154px;
+    margin-top: 63px;
+    margin-bottom: 53px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
