@@ -1,5 +1,5 @@
 import "./IntroSection.css";
-import CouchingCard from "../../CouchingCard/CouchingCard";
+import CouchingCard from "../CouchingCard/CouchingCard";
 
 export default function IntroSection() {
   return (

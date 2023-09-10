@@ -1,0 +1,10 @@
+.movie-last {
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-last h1 {
+    width: 100%;
+}
