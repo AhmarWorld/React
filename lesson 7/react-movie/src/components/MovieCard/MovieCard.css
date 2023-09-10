@@ -1,0 +1,12 @@
+.movie-card {
+    border-radius: 15px;
+    margin: auto;
+    width: 222px;
+    height: 333px;
+    object-fit: cover;
+    transition: all 0.3s ease 0s;
+}
+
+.movie-card:hover {
+    opacity: 0.8;
+}

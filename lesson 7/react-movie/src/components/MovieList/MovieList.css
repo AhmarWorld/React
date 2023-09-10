@@ -1,10 +1,21 @@
-.movie-last {
-    max-width: 1280px;
+.movie-list {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 10%;
 }
 
-.movie-last h1 {
+.movie-list h1 {
     width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.movie-list_container {
+    width: 100%;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
 }

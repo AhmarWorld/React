@@ -7,8 +7,8 @@ export default function HomePage() {
     const [inputValue, setInputValue] = useState('')
     const [language, setLanguage] = useState('en')
 
-    const [trendMovie, setTrendMovie] = useState([])
-
+    const [trendMovie, setTrendMovie] = useState([{}])
+    const [movies, setMovies] = useState([{}])
 
     const API_KEY = 'dc31091a1c1df71a3d2f7df5909d1976'
     const getFilmData = async (value, endpoint, query) => {
@@ -20,21 +20,29 @@ export default function HomePage() {
 
     useEffect(() => {
         getFilmData(setTrendMovie, 'movie/now_playing')
+        getFilmData(setMovies, 'movie/popular')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    useEffect(() => {
+        getFilmData(setTrendMovie, 'movie/now_playing')
+        getFilmData(setMovies, 'movie/popular')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [language])
 
     return (
         <div className="page">
             <MainFilm
-            // title={trendMovie[0].title}
-            // text={trendMovie[0].overview}
-            // img={trendMovie[0].backdrop_path}
+                title={trendMovie[0].title}
+                text={trendMovie[0].overview}
+                img={trendMovie[0].backdrop_path}
             />
             <Input
                 inputValue={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onSelect={(e) => setLanguage(e.target.value)}
             />
-            <MovieList />
+            <MovieList movies={movies} />
         </div>
     )
 }
