@@ -1,0 +1,9 @@
+.transform {
+  width: 1440px;
+  height: 878px;
+  padding: 123px 143px 139px 152px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

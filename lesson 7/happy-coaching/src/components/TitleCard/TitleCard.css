@@ -1,6 +1,6 @@
 .text-card {
   width: 545px;
-  height: 396px;
+  height: 430px;
 
   display: flex;
   flex-direction: column;
@@ -41,4 +41,15 @@
   font-weight: 800;
   line-height: 120%;
   letter-spacing: -0.72px;
+}
+
+.text-card__title h2 {
+  color: #333461;
+  font-family: Kumbh Sans;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -0.48px;
+  margin-bottom: 22px;
 }

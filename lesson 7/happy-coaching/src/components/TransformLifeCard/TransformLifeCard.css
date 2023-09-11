@@ -1,0 +1,37 @@
+.transform-card {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.guide-circle {
+  width: 96px;
+  height: 96px;
+
+  border-radius: 50px;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #20ad96;
+  color: white;
+
+  font-family: Kumbh Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.transform-box {
+  width: 446px;
+  height: 581px;
+
+  position: relative;
+  top: 48px;
+  left: 48px;
+
+  background: url("../../../public/assets/Frame.svg");
+}
