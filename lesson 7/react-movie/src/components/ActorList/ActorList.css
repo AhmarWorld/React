@@ -1,20 +1,22 @@
-.movie-list {
+.actor-list {
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 10%;
+    gap: 25px;
+    padding: 0px 20px;
 }
 
-.movie-list h1 {
+.actor-list h1 {
     width: 100%;
-    display: flex;
-    justify-content: flex-start;
+    max-width: 1240px;
+    text-align: left;
 }
 
-.movie-list_container {
+.actor-list_cards {
     width: 100%;
-    margin-top: 25px;
+    max-width: 1240px;
+
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 2rem;
