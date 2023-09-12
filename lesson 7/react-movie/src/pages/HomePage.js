@@ -10,7 +10,7 @@ export default function HomePage() {
 
     const [trendMovie, setTrendMovie] = useState([{}])
     const [movies, setMovies] = useState([{}])
-    const [loaderPage, setLoaderPage] = useState(1)
+    const [loaderPage, setLoaderPage] = useState(2)
 
     const API_KEY = 'dc31091a1c1df71a3d2f7df5909d1976'
     const getFilmData = async (value, endpoint, query, page, array) => {
