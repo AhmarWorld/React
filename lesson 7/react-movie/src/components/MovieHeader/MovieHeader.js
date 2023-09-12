@@ -2,7 +2,7 @@ import BudgetBox from '../BudgetBox/BudgetBox';
 import './MovieHeader.css';
 
 
-export default function MovieHeader({ budget, revenue, runtime, backImg, cardImg, title, text, rate }) {
+export default function MovieHeader({ budget, revenue, runtime, backImg, cardImg, title, text, rate, director }) {
     return (
         <>
             <div style={{
@@ -27,7 +27,7 @@ export default function MovieHeader({ budget, revenue, runtime, backImg, cardImg
                             </div>
                             <div className="director">
                                 <h3>DIRECTOR</h3>
-                                <p>Greta Gerwig</p>
+                                <p>{director}</p>
                             </div>
                         </div>
                     </div>
