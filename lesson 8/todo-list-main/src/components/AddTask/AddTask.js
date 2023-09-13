@@ -1,28 +1,28 @@
-import { useState } from 'react';
-import Form from '../Form/Form';
-import './AddTask.css';
+import { useState } from "react";
+import { useTodos } from "../../store/useTodos";
+import Form from "../Form/Form";
+import "./AddTask.css";
 
-export default function AddTask({ tasks, setTasks }) {
-    const [inputValue, setInputValue] = useState('');
+export default function AddTask() {
+  const [inputValue, setInputValue] = useState("");
+  const addTask = useTodos((state) => state.addTask);
 
-    const onChange = (e) => {
-        setInputValue(e.target.value);
-    };
+  const onChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
-    const addTask = () => {
-        const copy = [...tasks];
-        copy.push({ id: new Date(), value: inputValue });
-        setTasks(copy);
-        setInputValue('');
-    };
-    return (
-        <Form
-            inputValue={inputValue}
-            setInputValue={setInputValue}
-            onChange={onChange}
-            buttonValue="Add task"
-            placeholder="What is the task today?"
-            onClick={addTask}
-        />
-    );
+  const onClick = () => {
+    addTask(inputValue);
+    setInputValue("");
+  };
+  return (
+    <Form
+      inputValue={inputValue}
+      setInputValue={setInputValue}
+      onChange={onChange}
+      buttonValue="Add task"
+      placeholder="What is the task today?"
+      onClick={onClick}
+    />
+  );
 }

@@ -1,55 +1,53 @@
-import { useState } from 'react';
-import { AiOutlineEdit } from 'react-icons/ai';
-import { BsTrash } from 'react-icons/bs';
-import Form from '../Form/Form';
-import './TaskItem.css';
+import { useState } from "react";
+import { AiOutlineEdit } from "react-icons/ai";
+import { BsTrash } from "react-icons/bs";
+import { useTodos } from "../../store/useTodos";
+import Form from "../Form/Form";
+import "./TaskItem.css";
 
-export default function TaskItem({ task, tasks, setTasks }) {
-    const [isEditing, setIsEditing] = useState(false);
-    const [inputValue, setInputValue] = useState('');
+export default function TaskItem({ task }) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const deleteTask = useTodos((state) => state.deleteTask);
+  const editTask = useTodos((state) => state.editTask);
 
-    const onChange = (e) => {
-        setInputValue(e.target.value);
-    };
+  const onChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
-    const onEditTask = (id) => {
-        setIsEditing(false);
-        const copy = [...tasks];
-        const index = copy.findIndex((task) => task.id === id);
-        copy[index] = { ...copy[index], value: inputValue };
-        setTasks(copy);
-    };
+  const onEditTask = (id) => {
+    setIsEditing(false);
+    editTask(id, inputValue);
+  };
 
-    const onDelete = (id) => {
-        const copy = [...tasks];
-        const result = copy.filter((task) => task.id !== id);
-        setTasks(result);
-    };
+  const onDelete = (id) => {
+    deleteTask(id);
+  };
 
-    if (isEditing) {
-        return (
-            <Form
-                buttonValue="Update task"
-                placeholder="Update task"
-                inputValue={inputValue}
-                onChange={onChange}
-                onClick={() => {
-                    onEditTask(task.id);
-                }}
-            />
-        );
-    }
+  if (isEditing) {
     return (
-        <div className="taskItem">
-            {task.value}
-            <div className="task_item__icons">
-                <AiOutlineEdit onClick={() => setIsEditing(true)} />
-                <BsTrash
-                    onClick={() => {
-                        onDelete(task.id);
-                    }}
-                />
-            </div>
-        </div>
+      <Form
+        buttonValue="Update task"
+        placeholder="Update task"
+        inputValue={inputValue}
+        onChange={onChange}
+        onClick={() => {
+          onEditTask(task.id);
+        }}
+      />
     );
+  }
+  return (
+    <div className="taskItem">
+      {task.value}
+      <div className="task_item__icons">
+        <AiOutlineEdit onClick={() => setIsEditing(true)} />
+        <BsTrash
+          onClick={() => {
+            onDelete(task.id);
+          }}
+        />
+      </div>
+    </div>
+  );
 }
