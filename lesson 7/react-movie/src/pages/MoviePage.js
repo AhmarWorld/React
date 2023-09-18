@@ -1,36 +1,17 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import Path from "../components/Path/Path";
 import MovieHeader from "../components/MovieHeader/MovieHeader";
 import ActorList from "../components/ActorList/ActorList";
+import { useLoaderData } from "react-router-dom";
 
 export default function MoviePage() {
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const loaderData = useLoaderData();
 
-  const [movieData, setMovieData] = useState([{}]);
-  const [creditsData, setCreditsData] = useState({ cast: [{}], crew: [{}] });
   const [actors, setActors] = useState([]);
   const [directors, setDirectors] = useState([]);
-  const API_KEY = "dc31091a1c1df71a3d2f7df5909d1976";
-  const movieLoader = async (value, endpoint) => {
-    const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}${endpoint}?api_key=${API_KEY}&include_adult=false&language=en-EN&page=1`
-    );
-    if (!res.ok) {
-      navigate("/");
-    }
-    const data = await res.json();
-    value(data);
-  };
 
   useEffect(() => {
-    movieLoader(setMovieData);
-    movieLoader(setCreditsData, "/credits");
-  }, []);
-
-  useEffect(() => {
-    creditsData.crew.forEach((el) => {
+    loaderData.credits.crew.forEach((el) => {
       if (el.job === "Director") {
         setDirectors([...directors, el.name]);
       }
@@ -38,13 +19,13 @@ export default function MoviePage() {
 
     let temporaryActors = [];
 
-    creditsData.cast.forEach((el) => {
+    loaderData.credits.cast.forEach((el) => {
       if (el.known_for_department === "Acting") {
         temporaryActors.push(el);
         setActors(temporaryActors);
       }
     });
-  }, [creditsData]);
+  }, [loaderData]);
 
   const getMovieCharacteristic = () => {
     const result = {
@@ -53,12 +34,12 @@ export default function MoviePage() {
       revenue: "$",
     };
 
-    let runtimeH = Math.floor(movieData.runtime / 60);
-    let runtimeM = movieData.runtime % 60;
+    let runtimeH = Math.floor(loaderData.movieData.runtime / 60);
+    let runtimeM = loaderData.movieData.runtime % 60;
     result.runtime = `${runtimeH}h ${runtimeM}m`;
 
     let resultBudget = [];
-    let budgetArray = `${movieData.budget}`.split("").reverse();
+    let budgetArray = `${loaderData.movieData.budget}`.split("").reverse();
 
     for (let i = 0; i < budgetArray.length; i++) {
       if ((i + 1) % 3 === 0 && i + 1 !== budgetArray.length) {
@@ -71,7 +52,7 @@ export default function MoviePage() {
     result.budget = result.budget + resultBudget.reverse().join("");
 
     let resultRevenue = [];
-    let revenueArray = `${movieData.revenue}`.split("").reverse();
+    let revenueArray = `${loaderData.movieData.revenue}`.split("").reverse();
     for (let i = 0; i < revenueArray.length; i++) {
       if ((i + 1) % 3 === 0 && i + 1 !== revenueArray.length) {
         resultRevenue.push(revenueArray[i]);
@@ -87,16 +68,16 @@ export default function MoviePage() {
 
   return (
     <div className="page">
-      <Path title={movieData.original_title} />
+      <Path title={loaderData.movieData.original_title} />
       <MovieHeader
         runtime={getMovieCharacteristic().runtime}
         budget={getMovieCharacteristic().budget}
         revenue={getMovieCharacteristic().revenue}
-        cardImg={movieData.poster_path}
-        backImg={movieData.backdrop_path}
-        title={movieData.title}
-        text={movieData.overview}
-        rate={Math.round(movieData.vote_average * 100) / 100}
+        cardImg={loaderData.movieData.poster_path}
+        backImg={loaderData.movieData.backdrop_path}
+        title={loaderData.movieData.title}
+        text={loaderData.movieData.overview}
+        rate={Math.round(loaderData.movieData.vote_average * 100) / 100}
         director={directors[0]}
       />
       <ActorList actors={actors} />
