@@ -1,8 +1,8 @@
 import "./Button.css";
 
-export default function Button({ icon, children, onClick }) {
+export default function Button({ icon, children, onClick, color }) {
   return (
-    <button onClick={onClick}>
+    <button style={{ background: color }} onClick={onClick}>
       <div className="button-inner">
         {icon}
         {children}

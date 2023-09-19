@@ -1,0 +1,39 @@
+.main-section {
+  width: 62%;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.main-section .search {
+  width: 50%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.main-section .search h1 {
+  font-size: 48px;
+  text-align: center;
+}
+
+.main-section img {
+  width: 50%;
+}
+
+@media (max-width: 1120px) {
+  .main-section .search h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-section .search {
+    width: 318px;
+  }
+}

@@ -10,7 +10,7 @@ export default function Header() {
         <Link to={"/"}>Book Finder</Link>
       </h1>
       <Link to={"/wish"}>
-        <Button icon={<BsFillHeartFill />}>WishList</Button>
+        <Button icon={<BsFillHeartFill color="tomato" />}>WishList</Button>
       </Link>
     </header>
   );

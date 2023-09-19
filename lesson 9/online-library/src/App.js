@@ -1,6 +1,7 @@
 import "./Global.css";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<></>} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/wish" element={<></>} />
       </Routes>
     </div>
