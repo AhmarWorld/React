@@ -1,0 +1,12 @@
+.wishlist-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.wishlist-header img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 50px;
+}

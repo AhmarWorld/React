@@ -21,21 +21,14 @@ export const useBooks = create((set) => ({
       const { items } = await res.json();
       return { books: [...state.books, ...items] };
     }),
-  wishlist: [],
-  getWishlist: () => {
-    set((state) => {
-      const newWishlist = JSON.parse(localStorage.getItem("books-wishlist"));
-      return { wishlist: [...state.wishlist, ...newWishlist] };
-    });
-  },
+  wishlist: JSON.parse(localStorage.getItem("books-wishlist")) || [],
   addWishlist: (value) => {
     set((state) => {
-      const newWish = { id: new Date().getTime(), ...value };
       localStorage.setItem(
         "books-wishlist",
-        JSON.stringify([...state.wishlist, newWish])
+        JSON.stringify([...state.wishlist, value])
       );
-      return { wishlist: [...state.wishlist, newWish] };
+      return { wishlist: [...state.wishlist, value] };
     });
   },
   deleteWishlist: (value) => {

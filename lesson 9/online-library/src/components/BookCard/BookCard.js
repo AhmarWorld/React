@@ -1,8 +1,10 @@
 import "./BookCard.css";
 import { AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
+import { useBooks } from "../../store/useBooks";
 
 export default function BookCard({
+  id,
   title,
   date,
   authors,
@@ -14,11 +16,26 @@ export default function BookCard({
 }) {
   const [wishButtonColor, setWishButtonColor] = useState("");
 
+  const addWishlist = useBooks((state) => state.addWishlist)
+  const deleteWishlist = useBooks((state) => state.deleteWishlist)
+
   const onClick = () => {
     if (wishButtonColor) {
       setWishButtonColor("");
+      deleteWishlist(id)
     } else {
       setWishButtonColor("tomato");
+      addWishlist({
+        id,
+        title,
+        date,
+        authors,
+        subTitle,
+        img,
+        description,
+        link,
+        buy,
+      })
     }
   };
 
@@ -36,7 +53,7 @@ export default function BookCard({
         <p className="scroll-text">{description}</p>
       </div>
       <a rel="noreferrer" target="_blank" href={link} className="amazon">
-        {buy}
+        Buy on {buy}
       </a>
     </div>
   );
