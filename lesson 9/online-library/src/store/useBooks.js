@@ -9,19 +9,24 @@ function encodeQuery(data) {
 
 export const useBooks = create((set) => ({
   books: [],
-  getBooks: (value) =>
-    set(async (state) => {
-      const params = {
-        q: `${value}:keyes`,
-        key: process.env.REACT_APP_API_KEY,
-      };
-      const res = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?` + encodeQuery(params)
-      );
-      const { items } = await res.json();
-      return { books: [...state.books, ...items] };
-    }),
-  wishlist: JSON.parse(localStorage.getItem("books-wishlist")) || [],
+  getBooks: async (value) => {
+    const params = {
+      q: `${value}:keyes`,
+      key: process.env.REACT_APP_API_KEY,
+    };
+    const res = await fetch(
+      `https://www.googleapis.com/books/v1/volumes?` + encodeQuery(params)
+    );
+    const { items } = await res.json();
+    set((state) => ({ books: [...items] }))
+  },
+  wishlist: [],
+  getWishlist: () => {
+    set((state) => {
+      const newWishlist = localStorage.getItem('books-wishlist')
+      return { wishlist: [...newWishlist] }
+    })
+  },
   addWishlist: (value) => {
     set((state) => {
       localStorage.setItem(

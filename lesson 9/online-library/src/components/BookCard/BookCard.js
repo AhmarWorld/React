@@ -13,6 +13,7 @@ export default function BookCard({
   description,
   link,
   buy,
+  isEbook
 }) {
   const [wishButtonColor, setWishButtonColor] = useState("");
 
@@ -22,27 +23,34 @@ export default function BookCard({
   const onClick = () => {
     if (wishButtonColor) {
       setWishButtonColor("");
-      deleteWishlist(id)
+      addWishlist(
+        {
+          id,
+          title,
+          date,
+          authors,
+          subTitle,
+          img,
+          description,
+          link,
+          buy,
+          isEbook
+        }
+      )
     } else {
       setWishButtonColor("tomato");
-      addWishlist({
-        id,
-        title,
-        date,
-        authors,
-        subTitle,
-        img,
-        description,
-        link,
-        buy,
-      })
+      deleteWishlist(id)
     }
   };
+
+
 
   return (
     <div className="book-card">
       <div className="book-card_content">
-        <div onClick={onClick} className="wishlist-button">
+        <div onClick={() => {
+          onClick()
+        }} className="wishlist-button">
           <AiFillHeart color={wishButtonColor || "gray"} /> wishlist
         </div>
         <h2>{title}</h2>
@@ -52,7 +60,7 @@ export default function BookCard({
         <img src={img} alt="" />
         <p className="scroll-text">{description}</p>
       </div>
-      <a rel="noreferrer" target="_blank" href={link} className="amazon">
+      <a rel="noreferrer" target="_blank" href={link} className={isEbook ? 'google' : 'amazon'}>
         Buy on {buy}
       </a>
     </div>
