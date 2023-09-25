@@ -20,15 +20,10 @@ export const useBooks = create((set) => ({
     const { items } = await res.json();
     set((state) => ({ books: [...items] }))
   },
-  wishlist: [],
-  getWishlist: () => {
-    set((state) => {
-      const newWishlist = localStorage.getItem('books-wishlist')
-      return { wishlist: [...newWishlist] }
-    })
-  },
+  wishlist: JSON.parse(localStorage.getItem('books-wishlist')) || [],
   addWishlist: (value) => {
     set((state) => {
+      console.log(value)
       localStorage.setItem(
         "books-wishlist",
         JSON.stringify([...state.wishlist, value])
@@ -41,6 +36,7 @@ export const useBooks = create((set) => ({
       const newWishlist = [...state.wishlist].filter(
         (wish) => wish.id !== value
       );
+      console.log(newWishlist)
       localStorage.setItem("books-wishlist", JSON.stringify(newWishlist));
       return { wishlist: newWishlist };
     });

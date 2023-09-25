@@ -23,6 +23,10 @@ export default function BookCard({
   const onClick = () => {
     if (wishButtonColor) {
       setWishButtonColor("");
+      deleteWishlist(id)
+    } else {
+      setWishButtonColor("tomato");
+
       addWishlist(
         {
           id,
@@ -37,9 +41,6 @@ export default function BookCard({
           isEbook
         }
       )
-    } else {
-      setWishButtonColor("tomato");
-      deleteWishlist(id)
     }
   };
 
