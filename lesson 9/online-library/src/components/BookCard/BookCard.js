@@ -13,9 +13,10 @@ export default function BookCard({
   description,
   link,
   buy,
-  isEbook
+  isEbook,
+  wishState
 }) {
-  const [wishButtonColor, setWishButtonColor] = useState("");
+  const [wishButtonColor, setWishButtonColor] = useState(wishState || "");
 
   const addWishlist = useBooks((state) => state.addWishlist)
   const deleteWishlist = useBooks((state) => state.deleteWishlist)

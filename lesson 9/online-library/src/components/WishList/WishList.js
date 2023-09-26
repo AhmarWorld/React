@@ -21,6 +21,7 @@ export default function WishList() {
                         description={el.description}
                         link={el.link}
                         buy={el.buy}
+                        wishState={"tomato"}
                     />
                 )
             })}
