@@ -9,6 +9,9 @@ function encodeQuery(data) {
 
 export const useBooks = create((set) => ({
   books: [],
+  clearBooks: () => {
+    set((state) => ({ books: [] }))
+  },
   getBooks: async (value) => {
     const params = {
       q: `${value}:keyes`,
