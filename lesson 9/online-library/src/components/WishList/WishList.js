@@ -4,13 +4,12 @@ import './WishList.css';
 
 export default function WishList() {
     const wishBooks = useBooks((state) => state.wishlist)
-    console.log(wishBooks);
     return (
         <div className="wish-list_cards">
-            {wishBooks.map((el) => {
+            {wishBooks.map((el, i) => {
                 return (
                     <BookCard
-                        key={el.id}
+                        key={i}
                         isEbook={el.isEbook}
                         id={el.id}
                         title={el.title}
