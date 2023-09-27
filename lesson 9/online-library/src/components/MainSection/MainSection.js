@@ -13,6 +13,7 @@ export default function MainSection() {
 
   const onClick = () => {
     getBooks(inputValue);
+    setInputValue("");
   };
 
   return (

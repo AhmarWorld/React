@@ -9,11 +9,13 @@ export default function SerchBar({ inputValue, onChange, onClick }) {
         onChange={onChange}
         placeholder="Search a book"
       />
-      <Button
-        onClick={onClick}
-        children={"Search"}
-        color={"rgb(222, 102, 102)"}
-      />
+      {inputValue && (
+        <Button
+          onClick={onClick}
+          children={"Search"}
+          color={"rgb(222, 102, 102)"}
+        />
+      )}
     </div>
   );
 }
